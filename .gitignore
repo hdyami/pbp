@@ -1,6 +1,13 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/*settings*.php
 
+# pbp bluehost
+5sites
+404.shtml
+*php.ini*
+ss_blank
+listserv
+
 # Ignore paths that contain generated content.
 cache/
 files/
