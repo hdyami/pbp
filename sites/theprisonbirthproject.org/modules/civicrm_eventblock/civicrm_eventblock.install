@@ -1,0 +1,17 @@
+<?php
+// $Id: civicrm_eventblock.install,v 1.1.2.1 2009/02/23 19:53:47 JuliaKM Exp $
+
+/**
+ * @file
+ * Install, update, and uninstall functions for civicrm_eventblock.
+ */
+
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function civicrm_eventblock_uninstall() {
+  // Delete all the civicrm_eventblock variables and then clear the variable cache
+  db_query("DELETE FROM {variable} WHERE name LIKE 'civicrm_eventblock_%'");
+  cache_clear_all('variables', 'cache');
+}

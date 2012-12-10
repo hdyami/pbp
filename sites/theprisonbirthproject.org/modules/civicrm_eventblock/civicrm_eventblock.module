@@ -1,0 +1,90 @@
+<?php
+// $Id: civicrm_eventblock.module,v 1.1.4.1 2009/02/23 19:53:47 JuliaKM Exp $
+
+/**
+ * @file
+ * Main file for the civicrm_eventblock module, which creates a block of upcoming events from CiviEvent
+ *
+ */
+
+/**
+ * Implementation of hook_block().
+ */
+function civicrm_eventblock_block($op='list', $delta = 0, $edit = array()) {
+  switch ($op) {
+    case 'list':
+      $blocks[0]['info'] = t('Upcoming CiviCRM Events');
+      return $blocks;
+
+    case 'configure':
+      $form['civicrm_eventblock_block_link'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Link name to display'),
+        '#default_value' => variable_get('civicrm_eventblock_block_link', 'Register'),
+      );
+      $form['civicrm_eventblock_max_events'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Max number of events to display'),
+        '#default_value' => variable_get('civicrm_eventblock_max_events', 10),
+      );
+      return $form;
+
+    case 'save':
+      variable_set('civicrm_eventblock_block_link', $edit['civicrm_eventblock_block_link']);
+      variable_set('civicrm_eventblock_max_events', $edit['civicrm_eventblock_max_events']);
+      break;
+
+    case 'view':
+      $block = array(
+        'subject' => t('Upcoming Events'),
+        'content' => generate_civicrm_eventblock(),
+      );
+      return $block;
+  }
+}
+
+function cmp_date($a, $b) {
+  if ($a['start_date'] > $b['start_date']) return 1;
+  if ($a['start_date'] < $b['start_date']) return -1;
+  return 0;
+}
+
+function generate_civicrm_eventblock() {
+  civicrm_initialize(TRUE);
+  module_load_include('php', 'civicrm', '../api/v2/Event');
+  module_load_include('php', 'civicrm', '../CRM/Core/OptionGroup');
+
+  $params = array('is_public' => 1, 'is_active' => 1);
+  $my_events = civicrm_event_search($params);
+  $event_types = CRM_Core_OptionGroup::values('event_type');
+
+  if ($my_events) {
+    $count = 0;
+    $last = '';
+    usort($my_events, 'cmp_date');
+    foreach ($my_events as $event) {
+      $now = date('Y-m-d H:i:s');
+      if ($now > $event['start_date']) continue;
+      $startdate = date('M. j', strtotime($event['start_date']));
+      $enddate = date('M. j', strtotime($event['end_date']));
+
+      list($title_place, $title_desc) = split(":", $event['title'], 2);
+      $date = $startdate ." - ";
+
+      $type = $event_types[$event['event_type_id']];
+      $items[]= $date ."<span style=\"font-weight:bold\">". $type ."</span>".
+        ", ". $event['title'] . " " .
+        l(variable_get('civicrm_eventblock_block_link', 'Register'), 'civicrm/event/info', array('query' => 'reset=1&id='. $event['id']));
+      $count++;
+      $last = $startdate;
+      if ($count > variable_get(civicrm_eventblock_max_events, 10)) break;
+    }
+  }
+
+  if (count($items) > 0) {
+    return theme('item_list', $items);
+  }
+  else {
+    return;
+  }
+}

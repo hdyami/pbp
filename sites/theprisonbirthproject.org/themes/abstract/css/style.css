@@ -1,0 +1,80 @@
+p {
+  font-size: 1.2em;
+}
+
+a {
+  font-size: 1.2em;
+}
+
+li.leaf {
+  list-style-image: none;
+  list-style-type: none;
+}
+
+.pane-menu-primary-links li a.active {
+  color: #ADCB56;
+}
+
+li.collapsed {
+  list-style-type: none;
+  list-style-image: none;
+} 
+
+#site-name a {
+  font-size: 1.4em;
+}
+
+.pane-menu-primary-links {
+  font-size: 1.8em;
+}
+
+.crm_blocktitle {
+  font-size: 1.4em;
+}
+
+body#pid-donate input {
+  position: relative;
+  left: 42%;
+} 
+
+.block ul {
+  padding: 0;
+}
+
+.front ul.menu {
+  padding: 2px 0 0 10px;
+}
+
+td.col-1 {
+  padding-right: 20px;
+}
+
+
+/** custom styles **/
+.event_summary-section {
+  font-size: 28px;
+  color: #ADCB56;
+}
+
+div.event_description-section span,
+.crm-section div.content {
+  color: white;
+}
+
+.pane-civicrm-6 h2 {
+padding-top: 0px;
+}
+
+.front #crm-event-block a {
+  color: black;
+  background: url('/sites/theprisonbirthproject.org/themes/abstract/images/annual_fundraiser.jpg');
+  display: block;
+  width: 400px;
+  height: 560px;
+}
+
+
+.front #crm-event-block p em a {
+  background: none;
+  display: inline;
+}

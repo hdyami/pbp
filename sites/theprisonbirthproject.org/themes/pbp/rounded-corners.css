@@ -1,0 +1,129 @@
+   /* Set the box background color to the same color as the circle in the
+   image. Set the width, float and margins as desired. */
+   div#roundedbox {
+      background: #d8ef80;
+      float: right;
+      /*margin: 0 0 0 1em;*/
+      /*width: 175px;*/
+   }
+   /* Set the top and bottom height to be the same as the radius of the
+   circle (1/2 the size of the image). Set the font-size and line height
+   to a sufficiently small number that they won't affect the box. */
+   div#roundedbox #top, div#roundedbox #bottom {
+      font-size: 1px;
+      height: 16px;
+      line-height: 1px;
+   }
+   /* Now, we'll do the four corners. Set each of them to the same width
+   and height as the radius of the circle. For the top left and bottom
+   left, set them to float: left. Set the top right and bottom right to
+   float: right. Use the same background image for all four corners and
+   set them all to no-repeat. Set the background position to the same as
+   the position of the corner. */
+   div#roundedbox #topleft {
+      background: url(images/corners.gif) no-repeat top left;
+      float: left;
+      height: 16px;
+      width: 16px;
+   }
+   div#roundedbox #topright {
+      background: url(images/corners.gif) no-repeat top right;
+      float: right;
+      height: 16px;
+      width: 16px;
+   }
+   div#roundedbox #bottomleft {
+      background: url(images/corners.gif) no-repeat bottom left;
+      float: left;
+      height: 16px;
+      width: 16px;
+   }
+   div#roundedbox #bottomright {
+      background: url(images/corners.gif) no-repeat bottom right;
+      float: right;
+      height: 16px;
+      width: 16px;
+   }
+   /* Now, well add one more box for the content to keep from having
+   too much space at the top and bottom and to give it just a little
+   bit of left and right padding. Given our 16 pixel radius corners,
+   we're using -1em for the top and bottom margins. That will allow
+   the content to expand into the top and bottom <div> tags. We also
+   add 1em of left and right margin to keep the content from butting
+   right up against the edges. Adjust these figures to give you a
+   result that you find pleasing. */
+   div#roundedbox #boxcontent {
+      padding: 0em 0em;
+   }
+   /* Finally, well give paragraphs in the box a little smaller top
+   and bottom margin just to keep things tight. */
+   div#roundedbox p {
+      margin: .5em 0;
+   }
+
+   /**
+   * Begin inner rounded corners, the ones with the cream inner
+   */
+   /* Set the box background color to the same color as the circle in the
+   image. Set the width, float and margins as desired. */
+   div#roundedbox-inner {
+      background: #FFF6CC;
+      float: left;
+      margin: 0 0 1em 0;
+      width: 99.9%;
+   }
+   /* Set the top and bottom height to be the same as the radius of the
+   circle (1/2 the size of the image). Set the font-size and line height
+   to a sufficiently small number that they won't affect the box. */
+   div#roundedbox-inner #top-inner, div#roundedbox-inner #bottom-inner {
+      font-size: 1px;
+      height: 16px;
+      line-height: 1px;
+   }
+   /* Now, we'll do the four corners. Set each of them to the same width
+   and height as the radius of the circle. For the top left and bottom
+   left, set them to float: left. Set the top right and bottom right to
+   float: right. Use the same background image for all four corners and
+   set them all to no-repeat. Set the background position to the same as
+   the position of the corner. */
+   div#roundedbox-inner #topleft-inner {
+      background: url(images/corners-inner.gif) no-repeat top left;
+      float: left;
+      height: 16px;
+      width: 16px;
+   }
+   div#roundedbox-inner #topright-inner {
+      background: url(images/corners-inner.gif) no-repeat top right;
+      float: right;
+      height: 16px;
+      width: 16px;
+   }
+   div#roundedbox-inner #bottomleft-inner {
+      background: url(images/corners-inner.gif) no-repeat bottom left;
+      float: left;
+      height: 16px;
+      width: 16px;
+   }
+   div#roundedbox-inner #bottomright-inner {
+      background: url(images/corners-inner.gif) no-repeat bottom right;
+      float: right;
+      height: 16px;
+      width: 16px;
+   }
+   /* Now, well add one more box for the content to keep from having
+   too much space at the top and bottom and to give it just a little
+   bit of left and right padding. Given our 16 pixel radius corners,
+   we're using -1em for the top and bottom margins. That will allow
+   the content to expand into the top and bottom <div> tags. We also
+   add 1em of left and right margin to keep the content from butting
+   right up against the edges. Adjust these figures to give you a
+   result that you find pleasing. */
+   div#roundedbox-inner #boxcontent-inner {
+      padding: 0em 0em;
+   }
+   /* Finally, well give paragraphs in the box a little smaller top
+   and bottom margin just to keep things tight. */
+   div#roundedbox-inner p {
+      margin: .5em 0;
+   }
+

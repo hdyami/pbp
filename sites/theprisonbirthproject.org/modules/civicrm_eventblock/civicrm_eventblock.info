@@ -1,0 +1,12 @@
+; $Id: civicrm_eventblock.info,v 1.1.4.1 2009/02/23 19:53:47 JuliaKM Exp $
+name = "CiviCRM Event Block"
+description = "Creates a block of upcoming events from CiviEvent"
+dependencies[] = civicrm
+package = CiviCRM
+core = 6.x
+; Information added by drupal.org packaging script on 2009-02-25
+version = "6.x-1.0"
+core = "6.x"
+project = "civicrm_eventblock"
+datestamp = "1235601038"
+

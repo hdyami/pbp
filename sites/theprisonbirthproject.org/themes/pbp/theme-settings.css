@@ -1,0 +1,65 @@
+/* $Id: theme-settings.css,v 1.1.2.3 2008/01/27 12:57:41 johnalbin Exp $ */
+
+/*
+ * THEME SETTINGS STYLES
+ *
+ * This file is only loaded on the Theme Settings page for pbp and its
+ * subthemes: admin/build/themes/settings
+ */
+
+
+  #pbp-settings fieldset .form-item
+  {
+    padding-left: 200px;
+  }
+
+  #pbp-settings fieldset .form-checkboxes .form-item,
+  #pbp-settings fieldset .form-radios .form-item
+  {
+    padding-left: 0;
+  }
+
+  #pbp-settings fieldset .form-item label
+  {
+    float: left;
+    width: 190px;
+    margin-left: -200px;
+    margin-right: 10px;
+    text-align: right;
+  }
+
+  #pbp-settings fieldset .form-item label.option
+  {
+    float: none;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  #div-pbp-wireframes
+  {
+    margin: 1em 0;
+  }
+
+  #div-pbp-wireframes strong
+  {
+    float: left;
+    width: 190px;
+    margin-left: 0;
+    margin-right: 10px;
+    text-align: right;
+  }
+
+  #div-pbp-wireframes fieldset .form-item
+  {
+    display: inline;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  #div-pbp-wireframes fieldset .form-item .description
+  {
+    display: block;
+    margin-left: 200px;
+  }
