@@ -5,7 +5,7 @@ sites/*/*settings*.php
 5sites
 404.shtml
 *php.ini*
-ss_blank
+ss_blank.php
 listserv
 
 # Ignore paths that contain generated content.
