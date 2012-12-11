@@ -7,6 +7,7 @@ sites/*/*settings*.php
 *php.ini*
 ss_blank.php
 listserv
+test
 
 # Ignore paths that contain generated content.
 cache/
